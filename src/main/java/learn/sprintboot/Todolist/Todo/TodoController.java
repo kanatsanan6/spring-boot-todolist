@@ -31,4 +31,18 @@ public class TodoController {
     public void postTodos(@RequestBody Todo todo) {
         todoService.addNewTodo(todo);
     }
+
+    @DeleteMapping(path = "{todoId}")
+    public void deleteTodo(@PathVariable("todoId") Long todoId) {
+        todoService.deleteTodo(todoId);
+    }
+
+    @PutMapping(path = "{todoId}")
+    public void updateTodo(
+            @PathVariable("todoId") Long id,
+            @RequestParam(required = false) String title,
+            @RequestParam(required = false) Boolean status) {
+        todoService.updateTodo(id, status, title);
+    }
+
 }
