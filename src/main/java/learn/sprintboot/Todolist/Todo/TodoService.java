@@ -1,4 +1,4 @@
-package learn.sprintboot.Todolist;
+package learn.sprintboot.Todolist.Todo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,5 +16,9 @@ public class TodoService {
 
     public List<Todo> getTodos() {
         return todoRepository.findAll();
+    }
+
+    public void addNewTodo(Todo todo) {
+        todoRepository.save(todo);
     }
 }

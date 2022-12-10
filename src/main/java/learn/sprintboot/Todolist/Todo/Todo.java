@@ -1,11 +1,24 @@
-package learn.sprintboot.Todolist;
+package learn.sprintboot.Todolist.Todo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 public class Todo {
     @Id
+    @SequenceGenerator(
+            name = "todo_sequence",
+            sequenceName = "todo_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "todo_sequence"
+    )
     private Long id;
     private String title;
     private Boolean status;

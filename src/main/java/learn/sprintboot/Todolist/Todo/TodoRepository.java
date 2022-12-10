@@ -1,4 +1,4 @@
-package learn.sprintboot.Todolist;
+package learn.sprintboot.Todolist.Todo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
